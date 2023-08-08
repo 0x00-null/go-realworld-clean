@@ -14,7 +14,7 @@ ARG version
 RUN CGO_ENABLED=0 go build -ldflags="-s -w -X main.Version=${version} -X main.Build=${build}" -o /go-realworld-clean
 
 # Final Step
-FROM alpine
+FROM alpine:3.18.3
 
 # Base packages
 RUN apk update
